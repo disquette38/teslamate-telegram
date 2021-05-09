@@ -233,7 +233,7 @@ def on_message(client, userdata, msg):
 		global CAR_ID
 		global UNITS
 		now = datetime.now()
-		today = now.strftime("%d-%m-%Y %H:%M:%S")
+		today = now.strftime("%d/%m/%Y %H:%M:%S")
 		print(str(today)+" >> "+str(msg.topic)+" : "+str(msg.payload.decode()))
 	
 
@@ -334,7 +334,7 @@ def on_message(client, userdata, msg):
 			# Do we have enough informations to send a complete message ?
 			# if pseudo != "❔" and model != "❔" and etat_connu != "❔" and locked != "❔" and usable_battery_level != "❔" and latitude != "❔" and longitude != "❔" and distance > 0:
 			if distance > 0:
-				if HORODATAGE == "top": text_msg = str(today) + crlf + pseudo+" ("+model+") "+str(km)+" km"+crlf+text_locked+crlf+etat_connu+crlf
+				if HORODATAGE == "top": text_msg = str(today) +crlf + crlf + pseudo+" ("+model+") "+str(km)+" km"+crlf+text_locked+crlf+etat_connu+crlf
 				else: text_msg = pseudo+" ("+model+") "+str(km)+" km"+crlf+text_locked+crlf+etat_connu+crlf
 				if DEBUG: print("According to HORODATAGE var (" + HORODATAGE + ") the resulting message to the bot is at this step :" + crlf + text_msg + crlf)
 
